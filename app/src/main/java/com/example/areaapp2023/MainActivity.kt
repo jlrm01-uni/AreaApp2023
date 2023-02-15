@@ -29,6 +29,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun calculateArea() {
+        val width = widthWidget.text.toString().toDoubleOrNull()
+        val height = heightWidget.text.toString().toDoubleOrNull()
 
+        if (width == null || height == null) {
+            return
+        }
+
+        val area = width * height
+
+        val message = "Result is"
+        val displayMessage = "$message $area"
+
+        resultWidget.text = displayMessage
     }
 }
